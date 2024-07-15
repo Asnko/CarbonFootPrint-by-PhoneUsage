@@ -1,7 +1,8 @@
 # 핸드폰 사용량에 따른 탄소배출량 수집 웹페이지
 
 사용된 언어 : HTML, CSS, Javascript
-![IMG_6368](https://github.com/user-attachments/assets/e154ceb3-59dd-4a4b-b61b-2645846dbab7)
+
+![IMG_6368](https://github.com/user-attachments/assets/b1aa3a35-c211-49d8-a3f5-68d14b6be445)
 
 # 표준분포 그래프 출력 코드
 ```python
@@ -32,4 +33,4 @@ plt.legend()
 plt.show()
 
 ```
-![ed12e088-49bc-423b-abe2-de35c7572689](https://github.com/user-attachments/assets/5f10b126-ca6a-4a39-8514-3f6bcde5e296)
+![ed12e088-49bc-423b-abe2-de35c7572689](https://github.com/user-attachments/assets/d19435cc-b23c-472a-b25e-a2b601ceb5a7)
