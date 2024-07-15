@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>줄여봐요 탄소배출</title>
+    <meta property="og:title" content="줄여봐요 탄소배출" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+        html {
+            line-height: 1.15;
+        }
+
+        body {
+            margin: 0;
+            -webkit-touch-callout: none;
+        }
+
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+        }
+
+        p,
+        li,
+        ul,
+        pre,
+        div,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        figure,
+        blockquote,
+        figcaption {
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            background-color: transparent;
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        button,
+        select {
+            text-transform: none;
+        }
+
+        button,
+        [type="button"],
+        [type="reset"],
+        [type="submit"] {
+            -webkit-appearance: button;
+        }
+
+        button::-moz-focus-inner,
+        [type="button"]::-moz-focus-inner,
+        [type="reset"]::-moz-focus-inner,
+        [type="submit"]::-moz-focus-inner {
+            border-style: none;
+            padding: 0;
+        }
+
+        button:-moz-focus,
+        [type="button"]:-moz-focus,
+        [type="reset"],
+        [type="submit"]:-moz-focus {
+            outline: 1px dotted ButtonText;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        input {
+            padding: 2px 4px;
+        }
+
+        img {
+            display: block;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <style data-tag="default-style-sheet">
+        html {
+            font-family: 'AsiaSDNRM';
+            src: url(./AsiaSDNRM.woff) format('woff');
+            font-size: 16px;
+        }
+
+        body {
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: normal;
+            line-height: 1.15;
+            color: var(--dl-color-theme-neutral-dark);
+            background-color: var(--dl-color-theme-neutral-light);
+            fill: var(--dl-color-theme-neutral-dark);
+        }
+
+        .instruction-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border: 2px solid #ccc;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .instruction-box h3 {
+            margin-bottom: 10px;
+        }
+
+        .instruction-box button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 500;
+        }
+
+        .highlight {
+            color: rgb(220, 143, 35);
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700&display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
+</head>
+
+<body>
+    <link rel="stylesheet" href="./style.css" />
+    <div>
+        <link href="./index.css" rel="stylesheet" />
+        <div class="home-container">
+            <span class="home-text">SessionID</span>
+            <div class="home-container1">
+                <img alt="pastedImage" src="public/external/pastedimage-bkeq-1500h.png" class="home-pasted-image" />
+                <img alt="pastedImage" src="public/external/pastedimage-qaj4-1500h.png" class="home-pasted-image1" />
+                <button type="button" class="button home-button">Upload Image</button>
+            </div>
+            <img alt="pastedImage" src="public/external/pastedimage-yn9j-1200w.png" class="home-pasted-image2" />
+            <div class="home-container2">
+                <div class="home-container3">
+                    <span class="home-text02">줄</span>
+                    <span class="home-text03">여</span>
+                    <span class="home-text04">봐</span>
+                    <span class="home-text05">요</span>
+                    <span class="home-text06">탄</span>
+                    <span class="home-text07">소</span>
+                    <span class="home-text08">배</span>
+                    <span class="home-text09">출</span>
+                    <img alt="image" src="public/logo1-300w.png" class="home-image" />
+                    <img alt="image" src="public/logo2-300w.png" class="home-image01" />
+                    <img alt="image" src="public/logo3-300w.png" class="home-image02" />
+                    <img alt="image" src="public/logo4-removebg-preview-400w.png" class="home-image03" />
+                    <img alt="image" src="public/logo5-removebg-preview-400w.png" class="home-image04" />
+                    <img alt="image" src="public/output-onlinetools (1)-300w.png" class="home-image05" />
+                    <img alt="image" src="public/output-onlinetools (2)-300w.png" class="home-image06" />
+                    <img alt="image" src="public/output-onlinetools-400w.png" class="home-image07" />
+                    <span class="home-text10">Upload Image 버튼을 눌러 시작 해주세요!</span>
+                    <img alt="image" src="public/visual_bg_pc-1100h.png" class="home-image08" />
+                </div>
+            </div>
+            <img src="public/iosicon-500w.png" alt="image" id="ios" class="home-image09" />
+            <img src="public/androidicon-500w.png" alt="image" id="android" class="home-image10" />
+        </div>
+    </div>
+
+    <form id="uploadForm" enctype="multipart/form-data" style="display: none;">
+        <input type="file" id="fileInput" name="image" accept="image/*">
+    </form>
+    <div id="result"></div>
+    <div id="highestResult"></div>
+
+    <div id="overlay" class="overlay"></div>
+
+    <div id="android-instructions" class="instruction-box">
+        <h3>Android Instruction</h3>
+        <ol>
+            <li>설정 앱 실행</li>
+            <li>디지털 웰빙 클릭</li>
+            <li>오른쪽 위의 그래프 아이콘 클릭</li>
+            <li>하루 평균 사용시간 스크린샷</li>
+        </ol>
+        <button onclick="closeInstructions('android-instructions')">Confirm</button>
+    </div>
+
+    <div id="ios-instructions" class="instruction-box">
+        <h3>iOS Instruction</h3>
+        <ol>
+            <li>설정 앱 실행</li>
+            <li>스크린타임 클릭</li>
+            <li>앱 및 웹 사이트 활동 모두 보기</li>
+            <li>그래프를 오른쪽으로 스와이프</li>
+            <li>지난주 평균이 나오면 스크린샷</li>
+        </ol>
+        <button onclick="closeInstructions('ios-instructions')">Confirm</button>
+    </div>
+
+    <script>
+        document.addEventListener("contextmenu", e => e.preventDefault());
+        // Fetch and display session ID on page load
+        window.onload = async function () {
+            try {
+                const response = await fetch('/api/session/check', {
+                    method: 'POST'
+                });
+                const data = await response.json();
+                const sessionID = data.sessionId;
+                document.querySelector('.home-text').textContent = sessionID;
+            } catch (error) {
+                console.error('Error fetching session ID:', error);
+            }
+        };
+
+        // Handle image upload and parsing
+        document.querySelector('.home-button').addEventListener('click', async function () {
+            const fileInput = document.getElementById('fileInput');
+            fileInput.click();
+            fileInput.addEventListener('change', async function () {
+                const formData = new FormData();
+                formData.append('image', fileInput.files[0]);
+
+                try {
+                    const response = await fetch('/upload', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const result = await response.json();
+                    const resultReplaced = result.parsedText
+                        .replace(/人[lI]/g, '시')
+                        .replace(/\r\n/g, ' ');
+
+                    const regex = /(\d+)시간 (\d+)분/g;
+                    const androidRegex = /(\d+시간 \d+분) 하루 평균 사용시간/;
+
+                    let highestTimeString = '';
+
+                    if (navigator.userAgent.includes("Android")) {
+                        highestTimeString = getHighestTimeForAndroid(resultReplaced, androidRegex);
+                    } else if (navigator.userAgent.includes("iPhone")) {
+                        highestTimeString = getHighestTimeForIPhone(resultReplaced, regex);
+                    }
+
+                    const highestTimeStringMin = convertToMinutes(highestTimeString);
+
+                    let emittedCarbon;
+                    if (navigator.userAgent.includes("iPhone")) {
+                        emittedCarbon = (highestTimeStringMin * 4 * 12 * 1.05) / 1000;
+                    } else if (navigator.userAgent.includes("Android")) {
+                        emittedCarbon = (highestTimeStringMin * 7 * 4 * 12 * 1.05) / 1000;
+                    }
+
+                    const treeConsumption = emittedCarbon / 128;
+
+
+                    const sessionId = document.querySelector('.home-text').textContent;
+                    const postResponse = await fetch('http://34.64.189.54:3000/api/db', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            sessionId,
+                            emittedCarbon
+                        })
+                    });
+
+                    const postResultText = await postResponse.text();
+                    let postResult;
+
+                    try {
+                        postResult = JSON.parse(postResultText);
+                    } catch (error) {
+                        postResult = postResultText;
+                    }
+
+
+
+
+                    if (postResult === 'DONE') {
+                        document.querySelector('.home-text10').innerHTML =
+                            `이대로 가면 1년동안 <span class="highlight"> ${emittedCarbon.toFixed(2)}kg</span> 의 탄소를 배출할것 같아!  총 <span class="highlight"> ${treeConsumption.toFixed(2)}그루</span> 의 소나무가 필요하겠네..`;
+
+                    } else if (postResult.sessionId && postResult.emittedCarbon) {
+                        const parsedEmittedCarbon = parseFloat(postResult.emittedCarbon);
+                        const parsedTreeConsumption = parsedEmittedCarbon / 128;
+                        document.querySelector('.home-text10').innerHTML =
+                            `이미 한번 계산 해본거 같은데..아마 이대로 가면 1년동안 <span class="highlight"> ${parsedEmittedCarbon.toFixed(2)}kg</span> 의 탄소가 나오고 \n총 <span class="highlight"> ${parsedTreeConsumption.toFixed(2)}그루</span> 의 소나무가 필요했던거 같아.`;
+                    }
+
+                } catch (error) {
+                    console.error('Error:', error.message);
+                    alert("오류 발생. 개발자에게 문의하거나 아래의 방법을 시도해주세요.\n1. Chrome, Safari와 같은 범용적인 웹 브라우저를 이용해주세요.\n2. 자신의 OS에 맞는 스크린샷을 제출 해주세요.\n3. 사진을 편집하지 말아주세요.\n4. 스크린샷을 재 촬영 해주세요.")
+                }
+            });
+        });
+
+        function getHighestTimeForAndroid(resultReplaced, androidRegex) {
+            const match = androidRegex.exec(resultReplaced);
+            if (match) {
+                console.log("Highest 'X시간 Y분' string for Android:", match[1]);
+                return match[1];
+            }
+            return '';
+        }
+
+        function getHighestTimeForIPhone(resultReplaced, regex) {
+            let highestHours = -1;
+            let highestTimeString = '';
+
+            let match;
+            while ((match = regex.exec(resultReplaced)) !== null) {
+                const hours = parseInt(match[1], 10);
+                const minutes = parseInt(match[2], 10);
+                if (hours > highestHours) {
+                    highestHours = hours;
+                    highestTimeString = `${hours}시간 ${minutes}분`;
+                }
+            }
+            console.log("Highest 'X시간 Y분' string for iPhone:", highestTimeString);
+            return highestTimeString;
+        }
+
+        function convertToMinutes(timeString) {
+            const timeParts = timeString.match(/(\d+)시간 (\d+)분/);
+            const hours = parseInt(timeParts[1], 10);
+            const minutes = parseInt(timeParts[2], 10);
+            return (hours * 60) + minutes;
+        }
+
+        document.getElementById('android').addEventListener('click', function () {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('android-instructions').style.display = 'block';
+        });
+
+        document.getElementById('ios').addEventListener('click', function () {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('ios-instructions').style.display = 'block';
+        });
+
+        function closeInstructions(id) {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

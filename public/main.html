@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Management API Test</title>
+</head>
+<body>
+    <h1>Session Management API Test</h1>
+    <button id="startSession">Start Session</button>
+    <button id="checkSession">Check Session</button>
+    <p id="response"></p>
+
+    <script>
+/*        document.getElementById('startSession').addEventListener('click', () => {
+            fetch('/api/session/check', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('response').innerText = data.message;
+                });
+        });
+
+        document.getElementById('checkSession').addEventListener('click', () => {
+            fetch('/api/session/check', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('response').innerText = data.message;
+                });
+        });*/
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/api/session/check', {
+                    method: 'POST'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('response').innerText = data.message;
+                });
+        });
+    </script>
+</body>
+</html>

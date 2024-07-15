@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR Image Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>OCR API Req</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" id="fileInput" name="image" accept="image/*">
+        <button type="submit">Upload and Parse</button>
+    </form>
+    <div id="result"></div>
+    <div id="highestResult"></div>
+
+    <script>
+    document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const formData = new FormData();
+        const fileInput = document.getElementById('fileInput');
+        formData.append('image', fileInput.files[0]);
+
+        try {
+            const response = await fetch('/upload', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+            const resultDiv = document.getElementById('result');
+            const highestValueDiv = document.getElementById('highestResult');
+
+            const resultReplaced = result.parsedText
+                .replace(/人[lI]/g, '시')
+                .replace(/\r\n/g, ' ');
+
+            const regex = /(\d+)시간 (\d+)분/g;
+            const androidRegex = /(\d+시간 \d+분) 하루 평균 사용시간/;
+
+            let highestTimeString = '';
+
+            if (navigator.userAgent.includes("Android")) {
+                highestTimeString = getHighestTimeForAndroid(resultReplaced, androidRegex);
+            } else if (navigator.userAgent.includes("iPhone")) {
+                highestTimeString = getHighestTimeForIPhone(resultReplaced, regex);
+            }
+
+            if (result.error) {
+                resultDiv.textContent = 'Error: ' + result.error;
+            } else {
+                resultDiv.textContent = resultReplaced;
+                highestValueDiv.textContent = highestTimeString;
+            }
+
+        } catch (error) {
+            document.getElementById('result').textContent = 'Error: ' + error.message;
+        }
+    });
+
+    function getHighestTimeForAndroid(resultReplaced, androidRegex) {
+        const match = androidRegex.exec(resultReplaced);
+        if (match) {
+            console.log("Highest 'X시간 Y분' string for Android:", match[1]);
+            return match[1];
+        }
+        return '';
+    }
+
+    function getHighestTimeForIPhone(resultReplaced, regex) {
+        let highestHours = -1;
+        let highestTimeString = '';
+
+        let match;
+        while ((match = regex.exec(resultReplaced)) !== null) {
+            const hours = parseInt(match[1], 10);
+            if (hours > highestHours) {
+                highestHours = hours;
+                highestTimeString = match[0];
+            }
+        }
+        console.log("Highest 'X시간 Y분' string for iPhone:", highestTimeString);
+        return highestTimeString;
+    }
+    </script>
+</body>
+</html>
